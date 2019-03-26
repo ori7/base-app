@@ -1,3 +1,17 @@
-<p>
-  student works!
-</p>
+<br>
+<div class="card" style="width: 18rem;" *ngIf = "student">
+  <div class="card-body">
+    <h5 class="card-title"> {{ student.name }} </h5>
+    <div class="card-text">
+        Phone: {{ student.phone }}
+      </div>
+    <div class="card-text">
+      City: {{ student.city }}
+    </div>
+    <br>
+    <div class="row">
+      <button type="button" class="btn btn-danger offset-1" (click)='update(student)'>Update</button>
+      <button type="button" class="btn btn-danger offset-1" (click)='delite()'>Delite</button>
+    </div>
+  </div>
+</div>

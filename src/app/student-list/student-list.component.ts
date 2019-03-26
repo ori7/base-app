@@ -13,10 +13,14 @@ export class StudentListComponent implements OnInit {
   constructor(private angularFirestore: AngularFirestore) { }
 
   ngOnInit(): void {
-    this.students = [];
-    this.angularFirestore.collection<StudentModel>('students').valueChanges().subscribe(res => {
-      this.students = res;console.log(res);
-    })
+    this.angularFirestore.collection<StudentModel>('students').snapshotChanges().subscribe(snapshotRes => {
+      this.students = [];
+      snapshotRes.map(studentRes => {
+        const student: StudentModel = studentRes.payload.doc.data();
+        student.id = studentRes.payload.doc.id;
+        this.students.push(student);
+      });
+    });
   }
   
 

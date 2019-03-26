@@ -1,13 +1,13 @@
 <header class="container">
   <app-header></app-header>
 </header>
-<main class="container">
+<div class="container">
   <div class="row">
-    <router-outlet class="col-2"></router-outlet>
-    <app-student-list class="col-2"></app-student-list>
+    <main class="col-10">
+      <router-outlet></router-outlet>
+    </main>
+    <aside class="col-2">
+      <app-student-list></app-student-list>
+    </aside>
   </div>
-</main>
-
-
-<input type="text" class="form-control" #tmpl>
-<button type="submit" (click)='add(tmpl)'>Add</button>
+</div>
