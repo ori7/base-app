@@ -12,6 +12,7 @@ import { StudentComponent } from './student/student.component';
 import { StudentListComponent } from './student-list/student-list.component';
 import { HeaderComponent } from './header/header.component';
 import { FormsModule } from '@angular/forms';
+import { UpdateStudentComponent } from './update-student/update-student.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { FormsModule } from '@angular/forms';
     AboutComponent,
     StudentComponent,
     StudentListComponent,
-    HeaderComponent
+    HeaderComponent,
+    UpdateStudentComponent
   ],
   imports: [
     BrowserModule,

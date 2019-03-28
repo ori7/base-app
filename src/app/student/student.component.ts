@@ -16,6 +16,7 @@ export class StudentComponent implements OnInit {
     private router: Router) { }
 
   ngOnInit() {
+
     this.activatedRoute.params.subscribe(res => {
       const id = res['id'];
       this.angularFireStore.collection('students').doc<StudentModel>(id).valueChanges().subscribe(studentRes => {
@@ -26,8 +27,14 @@ export class StudentComponent implements OnInit {
   }
 
   delite(){
+
     this.angularFireStore.collection('students').doc(this.student.id).delete();
     this.router.navigate(['/']);
+  }
+
+  update(){
+
+    this.router.navigate(['/update/:' + this.student.id]);
   }
 
 }
